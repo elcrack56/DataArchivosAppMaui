@@ -24,12 +24,16 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+            <Label
+                x:Name="label_Id"
+                Text="{Binding Id}"/>
+            <Label
+                x:Name="label_Nombre"
+                Text="{Binding Nombre}"/>
+            <Label
+                x:Name="label_Carrera"
+                Text="{Binding Carrera}"/>
+            
         </VerticalStackLayout>
     </ScrollView>
 

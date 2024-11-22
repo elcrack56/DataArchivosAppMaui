@@ -1,25 +1,23 @@
-﻿namespace DataArchivosAppMaui
+﻿using DataArchivosAppMaui.Models;
+using DataArchivosAppMaui.Repository;
+
+namespace DataArchivosAppMaui
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
+        public EstudianteUDLA estudiante;
+        EstudianteUDLAFilesRepository _repository;
         public MainPage()
         {
             InitializeComponent();
+
+            _repository = new EstudianteUDLAFilesRepository();
+            estudiante = _repository.DevuelveIndoEstudianteUDLA(1);
+
+            BindingContext = estudiante;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
     }
 
 }
